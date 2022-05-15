@@ -4,14 +4,29 @@ Crea una función que nos devuelva el número de veces que se repite cada una de
 
 const counterWords = ['code', 'repeat', 'eat', 'sleep', 'code', 'enjoy', 'sleep', 'code', 'enjoy', 'upgrade', 'code'];
 
-let repetitions = "";
+let arrayPalabrasVistas = [];
 
-/*Console log en el bucle, se repite 7 veces (no 49) en el primer for
+let vecesRepetidas = 0;
 
-function repeatCounter(array) {
-  // insert code
+function repeatCounter(array){
+  for (let i = 0 ; i < array.length; i++){
+    if(array[i] === [i]){
+      vecesRepetidas += 1;
+      i--;
+    }
+    arrayPalabrasVistas.push(array[i]);
+  }
+ 
+  for (let j = 0; j < array.length; j++){
+    if(array[j]=== [j]){
+      vecesRepetidas += 1;
+      j--;
+    }
+  }
+  //console.log(arrayPalabrasVistas);
+  console.log(vecesRepetidas);
 }
 
-array de vistos, para qe estas palabras ya no se incluyan
+repeatCounter(counterWords);
 
-reiniciar la variable repeticiones 0 
+
